@@ -1,0 +1,7 @@
+lib_managed
+sbt
+sbt-launcher.jar
+sbt.bat
+target
+*.swp
+*.swo
