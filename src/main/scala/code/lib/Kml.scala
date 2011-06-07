@@ -11,7 +11,7 @@ import json._
 import scala.xml._
 
 // fake record object...
-case class Location( val lat, val lon )
+case class Location( val lat: Double, val lon: Double )
 
 /**
  * A simple example of a REST style interface
@@ -23,7 +23,7 @@ object Kml extends RestHelper {
   val coords = ( "" /: locations ) { (a,e) => a+"%s,%s,0\n".format(e.lon,e.lat) }
 
   serve {
-    case "api" :: "location.kml" :: Nil XmlGet _ =>
+    case "api" :: "location.kml" :: Nil Get _ =>
       val resp = <kml xmlns="http://earth.google.com/kml/2.1">
           <Document>
             <name>Places You've Gone</name>

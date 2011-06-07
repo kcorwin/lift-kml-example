@@ -11,6 +11,7 @@ import Loc._
 import mapper._
 
 import code.model._
+import code.lib.Kml
 
 
 /**
@@ -77,5 +78,7 @@ class Boot {
 
     // Make a transaction span the whole HTTP request
     S.addAround(DB.buildLoanWrapper)
+
+    LiftRules.statelessDispatchTable.append( Kml )
   }
 }

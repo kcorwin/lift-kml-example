@@ -5,3 +5,4 @@ sbt.bat
 target
 *.swp
 *.swo
+project/boot
