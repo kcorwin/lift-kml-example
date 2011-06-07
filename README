@@ -1,0 +1,10 @@
+Apologies in advance for what I assume is a dumb n00b question.  I'm attempting to dynamically generate KML using RestHelper.  The problem I'm running into is that some elements of the XML are being stripped.  Namely the entire contents of the <Script> tag, as well as the xmlns attribute from the enclosing <Kml> tag.  I assume this is an intentional feature that's happening somewhere down the pipe, but I can't figure out where or how to configure whatever filtering is going on.
+
+I put together as minimal an example as I could on github: https://github.com/kcorwin/lift-kml-example
+
+Clone it, sbt, update and jetty-run.  Then do: curl --silent 'http://localhost:8080/api/location.kml'
+
+You'll see what I mean.  For my own sanity check, I added an ugly 'println' in the body of the serve{} block - you can see the Style tag and xmlns attributes are intact when it prints to console.
+
+Thanks in advance for any help!
+
